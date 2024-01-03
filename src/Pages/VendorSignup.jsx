@@ -9,12 +9,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const defaultTheme = createTheme();
 
 const VendorSignup = () => {
-    const [formData,setFormData]=useState({name:"",email:"",password:"",id:"",isActive:false,category:"",description:""})
+    const [formData,setFormData]=useState({name:"",email:"",password:"",id:"",isActive:false,category:"",description:"",price:""})
     const navigate=useNavigate()
 
 const handleChange=(e)=>{
@@ -36,7 +36,8 @@ const handleSubmit =  e => {
       password: formData.password,
       isActive:formData.isActive,
       category:formData.category,
-      description:formData.description
+      description:formData.description,
+      price:formData.price
     };
      axios.post('http://localhost:8800/vendors', newVendorData, header)
     .then(response => console.log(response))
@@ -107,9 +108,12 @@ const handleSubmit =  e => {
             >
               Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
+            <Grid container>
               <Grid item>
-         
+                Already have an account?
+              { <Link to="/vendor">
+               Sign in
+              </Link> }
               </Grid>
             </Grid>
           </Box>

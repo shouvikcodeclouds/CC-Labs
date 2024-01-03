@@ -1,0 +1,62 @@
+{
+  "vendors": [
+    {
+      "id": "5607c32b-28ef-45ee-8dd1-2c3144e5dbca",
+      "name": "test",
+      "email": "test@test.com",
+      "password": "cccc1234",
+      "isActive": true,
+      "category": "web design",
+      "description": "cccccv",
+      "price": "33.45"
+    },
+    {
+      "id": "32d95058-1fb7-416a-be79-a66a359679c6",
+      "name": "test2",
+      "email": "test2@codeclouds.com",
+      "password": "Okay1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "ba38da29-77b9-4227-a5b1-44d2b6f2032f",
+      "name": "shouvik2",
+      "email": "shouvik@cc.co.in",
+      "password": "12345ABCD",
+      "isActive": true,
+      "category": "",
+      "description": "huh",
+      "price": ""
+    },
+    {
+      "id": "ffaa25fe-e62f-407c-97bb-29f50ac54ab9",
+      "name": "Dibyendu",
+      "email": "dibyendu@cc.com",
+      "password": "okay1234",
+      "isActive": true,
+      "category": "interior decoration",
+      "description": "lorem",
+      "price": "45.70"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Web Design",
+      "value": "web design"
+    },
+    {
+      "name": "Interior Decoration",
+      "value": "interior decoration"
+    },
+    {
+      "name": "Food Delivery",
+      "value": "food delivery"
+    },
+    {
+      "name": "Other",
+      "value": "Other"
+    }
+  ]
+}

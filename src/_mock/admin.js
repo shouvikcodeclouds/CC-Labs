@@ -1,7 +1,7 @@
 export const admin=
     {
         displayName: 'Shouvik Das',
-        email: 'shouvik@gmail.com',
+        email: 'shouvik.das@codeclouds.co.in',
         password:"pass12345",
         
       };

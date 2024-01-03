@@ -4,18 +4,18 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {  ThemeProvider } from '@mui/material/styles';
 //import Dashboard from './Dashboard';
 import { admin } from '../_mock/admin';
 import { useNavigate } from 'react-router-dom';
 
-const defaultTheme = createTheme();
+
 
 const AdminLogin=({ onLogin })=> {
 
 const [login,setLogin]=useState({email:"",password:""})
 const [auth,setAuth]=useState(false);
-const [error,setError]=useState("");
+const [error,setError]=useState(false);
 const navigate=useNavigate();
 
 
@@ -31,15 +31,21 @@ setLogin({...login,
 
   const handleLogin =  e => {
     e.preventDefault();
+    
     console.log("submit")
     if(admin.email==login.email&&admin.password==login.password){
         console.log("success")
-        onLogin=true;
-        navigate('/admindashboard')
-        
+        onLogin(true);
+        console.log(onLogin)
+        localStorage.setItem("adimn","loggedin")
+        setTimeout(() => {
+          navigate('/admindashboard')
+        }, 5000); 
+        //return onLogin;
 }
 else{
-    setError("Invalid Credentials")
+  console.log("error");
+    setError(true)
 }
   }
    
@@ -48,7 +54,7 @@ else{
   return (
     <>
 
-    <ThemeProvider theme={defaultTheme}>
+   
       <div className='admin-login-container'>
      
         <Box
@@ -95,11 +101,11 @@ else{
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={handleLogin}
+            
             >
               Sign In
             </Button>
-           {error.length>0&& <Typography variant='p'></Typography>}
+           {error&& < p className='inactive'>Please Enter correct credentials and try again</p>}
             <Grid container>
               <Grid item xs>
                
@@ -109,7 +115,7 @@ else{
         </Box>
       
       </div>
-    </ThemeProvider>
+   
     </>
   );
 }

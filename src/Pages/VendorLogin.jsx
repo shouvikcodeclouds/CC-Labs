@@ -7,17 +7,18 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const defaultTheme =createTheme();
+
 const VendorLogin = ({ onLogin }) => {
     const [login,setLogin]=useState({
         email:"",
         password:""
       })
+      const [error,setError]=useState(false);
       const navigate=useNavigate()
       function handleChange(e){
-       
+       setError(false);
         setLogin({...login,[e.target.name]:e.target.value})
       }
       const handleLogin = async e => {
@@ -30,17 +31,22 @@ const VendorLogin = ({ onLogin }) => {
               vendor.password === login.password
           );
           console.log(vendorData.data);
-          const id=isAuthenticated.id;
+         
           console.log(isAuthenticated);
           if(isAuthenticated){
+            const id=isAuthenticated.id;
             onLogin(isAuthenticated);
+        localStorage.setItem("vendor","loggedin")
+        navigate(`/vendordashboard/${id}`)
           }
-          navigate(`vendordashboard/${id}`)
+         else{
+            setError(true);
+         }
       }
 
   return (
     <>
-      <ThemeProvider theme={defaultTheme}>
+      
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
@@ -87,21 +93,21 @@ const VendorLogin = ({ onLogin }) => {
             >
               Sign In
             </Button>
+            {error&& < p className='inactive'>Please Enter correct credentials and try again</p>}
             <Grid container>
               <Grid item>
-              {/* <Link to="/signup">
-              {"Don't have an account? Sign Up"}
-              </Link> */}
-                {/* <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link> */}
+                Don't have an account?
+              { <Link to="/signup">
+               Sign Up
+              </Link> }
+                
                 </Grid>
                 </Grid>
               </Box>
             </Box>
           
           </Container>
-        </ThemeProvider>
+  
         </>
     
   )
