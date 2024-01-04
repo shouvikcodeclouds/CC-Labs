@@ -25,6 +25,7 @@ body {
 .site-name {
   font-size: 1.5rem;
   font-weight: bold;
+  cursor: pointer;
 }
 .login-container {
   display: flex;
@@ -100,6 +101,7 @@ body {
 }
 .inactive{
   color: red;
+  margin-top: 20px!important;
 }
 .login-signup-options {
   margin-top: 20px;
@@ -116,7 +118,7 @@ body {
   color: #fff;
   padding: 30px 0;
   opacity: 0.4;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   min-width: 100%;
   max-height: 10rem;
@@ -400,10 +402,101 @@ input:checked + .slider:before {
   border-radius: 5px;
   margin-top: 15px;
 }
+.wavy-background {
+  width: 100%;
+  height: 280px;
+  background-color: rgb(47, 117, 203);
+  flex-direction: column;
+  color: #fff;
+  font-family: Arial;
+}
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; 
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2196f3" fill-opacity="1" d="M0,288L80,282.7C160,277,320,267,480,266.7C640,267,800,277,960,277.3C1120,277,1280,267,1360,261.3L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path></svg>') bottom repeat-x;
+}
+.category-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.category-heading {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+}
+
+.category-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+.category-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  width: 75%;
+}
+
+.add-category-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.tab-header {
+  display: flex;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+.tab {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent; 
+  transition: border-bottom 0.3s ease; 
+}
+.tab.active-tab {
+  border-bottom: 2px solid rgb(0, 179, 255);
+  
+}
+.form-err{
+  margin:0 20px;
+}
 @media (max-width: 767px) {
   .footer-section {
     margin-bottom: 20px;
+   
   }
+}
+  @media (max-width:400px) {
+    .category-input{
+      width: 65%;
+    }
 }
 @keyframes loadingA {
  0% {

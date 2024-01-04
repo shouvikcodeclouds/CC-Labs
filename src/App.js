@@ -46,36 +46,40 @@ useEffect(() => {
     <VendorDashboard/>
    <Footer/> */}
    <BrowserRouter>
-   <Header logout={()=>{
-    setIsVendorLoggedIn(!isVendorLoggedIn)
-    setAdminLoggedIn(!isAdminLoggedIn)
-    
- }}/>
+   
+   <Header/>
+ 
   <Routes>
   
     <Route path="/" exact element={<Homepage />} />
     <Route
       path="/admin"
       element={
-        isAdminLoggedIn ? (
+        localStorage.getItem("admin")=='true' ? (
           <Navigate to="/admindashboard" />
         ) : (
-          <AdminLogin onLogin={handleAdminLogin} />
+          <AdminLogin/>
         )
       }
     />
     <Route
       path="/vendor"
-      element={<VendorLogin onLogin={handleVendorLogin} />}
+      element={
+        localStorage.getItem("vendor")=='true' ? (
+          <Navigate to="/vendordashboard/:id" />
+        ) : (
+      <VendorLogin/>)}
     />
     <Route path="/signup" element={<VendorSignup />} />
     <Route path="/admindashboard"  element={<AdminDashboard />} />
-     <Route path="/vendortracker/:id" element={<VendorTracker />} />
+    <Route path="/vendortracker/:id"  element={<VendorTracker />} />
+     {/* <Route path="/vendortracker/:id" element={<VendorTracker />} /> */}
     <Route path="/vendordashboard/:id" element={<VendorDashboard/>} />
     
        
         
   </Routes>
+  
  
 </BrowserRouter>
     </>

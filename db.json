@@ -37,26 +37,80 @@
       "password": "okay1234",
       "isActive": true,
       "category": "interior decoration",
-      "description": "lorem",
+      "description": "lorem ipsum",
       "price": "45.70"
+    },
+    {
+      "id": "92e326e8-2123-476a-92d8-3a503ea7e636",
+      "name": "test5",
+      "email": "test@test.com",
+      "password": "ssss1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "f8b9bb08-7f64-4908-9b6c-2dca6688178e",
+      "name": "Sayan",
+      "email": "sayan@gmail.com",
+      "password": "pass1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "1a4b1068-7c09-4543-936c-4cdda3ab788f",
+      "name": "vendor",
+      "email": "vendor@gmail.com",
+      "password": "pass1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
     }
   ],
   "categories": [
     {
+      "id": "1",
       "name": "Web Design",
       "value": "web design"
     },
     {
+      "id": "2",
       "name": "Interior Decoration",
       "value": "interior decoration"
     },
     {
+      "id": "3",
       "name": "Food Delivery",
       "value": "food delivery"
     },
     {
+      "id": "4",
       "name": "Other",
-      "value": "Other"
+      "value": "other"
+    },
+    {
+      "id": "5",
+      "name": "name",
+      "value": "value"
+    },
+    {
+      "id": "6",
+      "name": "Wall Painting",
+      "value": "wall painting"
+    },
+    {
+      "id": "7",
+      "name": "Electric appliance repairing",
+      "value": "electric appliance repairing"
+    },
+    {
+      "id": "8",
+      "name": "Kitchen appliance repairing",
+      "value": "kitchen appliance repairing"
     }
   ]
 }

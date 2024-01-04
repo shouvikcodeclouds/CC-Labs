@@ -10,7 +10,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link, useNavigate } from 'react-router-dom';
 
 
-const VendorLogin = ({ onLogin }) => {
+const VendorLogin = () => {
     const [login,setLogin]=useState({
         email:"",
         password:""
@@ -35,8 +35,7 @@ const VendorLogin = ({ onLogin }) => {
           console.log(isAuthenticated);
           if(isAuthenticated){
             const id=isAuthenticated.id;
-            onLogin(isAuthenticated);
-        localStorage.setItem("vendor","loggedin")
+        localStorage.setItem("vendor",true)
         navigate(`/vendordashboard/${id}`)
           }
          else{

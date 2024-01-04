@@ -1,125 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { useNavigate, useParams } from 'react-router-dom'
-// import axios from 'axios';
-// import { Box, Grid, Typography } from '@mui/material';
-// import Switch from '../Components/Switch';
-// import Loader from '../Components/Loader';
-
-// const VendorTracker = () => {
-//     const {id}=useParams();
-//     const navigate=useNavigate();
-//     const [vendor,setVendor]=useState();
-//     const [status,setStatus]=useState(false);
-//     const [changed,setChanged]=useState(false);
-//     const [load,setLoad]=useState(false);
-//     const [active,setActive]=useState("");
-//     useEffect(() => {
-//       setChanged(false);
-    
-//       const fetchData = async () => {
-//         try {
-//           const response = await axios.get(`http://localhost:8800/vendors/${id}`);
-//           setVendor(response.data);
-//           setStatus(response.data?.isActive);
-//         } catch (error) {
-          
-//           console.error('Error fetching vendor data:', error);
-//         }
-//       };
-    
-//       fetchData();
-//     }, [id]); 
-//     useEffect(() => {
-     
-//       axios.get(`http://localhost:8800/vendors/${id}`)
-//       .then(res=>setVendor(res.data))
-//       .then(()=>setStatus(vendor?.isActive))
-//       if(vendor?.isActive) setActive('Active')
-//       else setActive("Inactive")
-//       console.log(active)
-
-//     }, [vendor?.isActive,active])
-
-
-
-//     const changeActiveStatus= async (e)=>{
-//       let activeStatus = { isActive: status };
-
-//       const headers = {
-//         'Content-Type': 'application/json',
-//       };
-//       try {
-//         await axios.patch(`http://localhost:8800/vendors/${id}`, activeStatus, headers);
-//         const response = await axios.get(`http://localhost:8800/vendors/${id}`);
-//         setVendor(response.data);
-//         setLoad(true)
-//         setTimeout(() => {
-//           navigate('/admindashboard')
-//         }, 2000);
-//       } catch (error) {
-       
-//         console.error('Error:', error);
-//       }
-//     };
-  
-  
-//   const handlechange=(e)=>{
-//     setStatus(!status)
-//     setChanged(true)
-//   }
-//   return (
-//     <>
-//     <div style={{padding:'2rem'}}>
-//         <Grid container className="name-container" >
-         
-//           <Grid item sx={{margin:'0 5rem'}} sm={4}>
-//            <b>Vendor Name</b>:- {vendor?.name}
-//           </Grid>
-//           <Grid item spacing={2} sx={{margin:'0 5rem'}} sm={4}>
-//            <b>Email ID</b>:- {vendor?.email}
-//           </Grid>
-//           <Grid item spacing={2} sx={{margin:'0 5rem'}} sm={4}>
-//            <b>Status</b>:- <p className={active.toLowerCase()==='active'?'active':'inactive'}>{active}</p>
-//           </Grid>
-//           </Grid>
-//           <Box sx={{margin:'5rem 0'}}>
-//           <Grid container className="name-container">
-//           <Grid item sm={12}>
-//             About Vendor
-//           </Grid>
-//           <Grid item sm={12}>
-//             {vendor?.description}
-//           </Grid>
-          
-//         </Grid>
-       
-
-//           </Box>
-//          <Grid container  sx={{width:'30%',display:'flex',justifyContent:'space-around' }}>
-//           <Grid item sm={6}>
-//           <Typography 
-//           align='center' 
-//           margin={'0 0 10px 0'}
-//           >
-//             {`Change active status of ${vendor?.name}`}
-//           </Typography> 
-//           </Grid>
-//           <Grid item sm={6} sx={{marginBottom:'50px'}}>
-//           <Switch 
-//           label=""  
-//           checked={status} 
-//           onChange={handlechange} />
-//           </Grid>
-          
-//           </Grid>
-//     </div>
-//     {changed&&<button className='login-button save-changes' onClick={changeActiveStatus}>Save Changes</button>}
-//     {load&&<Loader/>}
-//     </>
-//   )
-// }
-
-// export default VendorTracker;
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -127,7 +5,7 @@ import axios from 'axios';
 import { Box, Grid, Typography, Button } from '@mui/material';
 import Switch from '../Components/Switch';
 import Loader from '../Components/Loader';
-import { admin } from '../_mock/admin';
+
 const VendorTracker = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -189,7 +67,7 @@ const VendorTracker = () => {
 
   return (
     <>
-    <Typography variant="h5">Welcome {admin.displayName}</Typography>
+    
       <Box
   sx={{
     padding: '2rem',

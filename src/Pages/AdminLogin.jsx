@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const AdminLogin=({ onLogin })=> {
+const AdminLogin=()=> {
 
 const [login,setLogin]=useState({email:"",password:""})
 const [auth,setAuth]=useState(false);
@@ -35,13 +35,11 @@ setLogin({...login,
     console.log("submit")
     if(admin.email==login.email&&admin.password==login.password){
         console.log("success")
-        onLogin(true);
-        console.log(onLogin)
-        localStorage.setItem("adimn","loggedin")
+        localStorage.setItem("admin",true)
         setTimeout(() => {
           navigate('/admindashboard')
-        }, 5000); 
-        //return onLogin;
+        }, 1000); 
+        
 }
 else{
   console.log("error");
