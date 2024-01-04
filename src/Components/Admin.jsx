@@ -214,7 +214,7 @@ const Admin = () => {
                       )}
                     </TableCell>
                     <TableCell>{vendor.description ? vendor.description : 'Not added'}</TableCell>
-                    <TableCell>{vendor.price ? vendor.price : 'Not added'}</TableCell>
+                    <TableCell>{vendor.price ? `$${vendor.price}` : 'Not added'}</TableCell>
                     <TableCell>
                       <MoreVertIcon onClick={(e) => handleDropdown(e, vendor.id)} sx={{cursor:'pointer'}} />
                     </TableCell>
