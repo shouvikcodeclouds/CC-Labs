@@ -134,7 +134,7 @@ const Admin = () => {
   label="Search by Name"
   variant="outlined"
   size="small"
-  style={{ width: '100%', maxWidth: '100%' }} // Set the width as a percentage of the page width
+  style={{ width: '100%', maxWidth: '100%' }} 
   onChange={(e) => setSearchTerm(e.target.value)}
   InputProps={{
     endAdornment: (
@@ -153,7 +153,7 @@ const Admin = () => {
           bottom: 0,
           left: 0,
           right: 0,
-          borderBottom: '1px solid #000', // Adjust the color as needed
+          borderBottom: '1px solid #000', 
           pointerEvents: 'none',
         },
       },
