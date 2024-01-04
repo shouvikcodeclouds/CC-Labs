@@ -1,5 +1,5 @@
 
-import React,{useState,useEffect} from 'react';
+import React from 'react';
 import './App.css';
 
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
@@ -16,23 +16,7 @@ import VendorTracker from './Pages/VendorTracker';
 
 
 function App() {
-  const[isAdminLoggedIn,setAdminLoggedIn]=useState(false);
-const[isVendorLoggedIn,setIsVendorLoggedIn]=useState(false);
 
-
-const handleAdminLogin = (loginStatus) => {
-  setAdminLoggedIn(loginStatus);
-};
-
-const handleVendorLogin = (loggedIn) => {
-  setIsVendorLoggedIn(loggedIn);
-};
-useEffect(() => {
-  isAdminLoggedIn&&setAdminLoggedIn(false)
-  isVendorLoggedIn&& setIsVendorLoggedIn(false)
-  console.log(isAdminLoggedIn+" "+isVendorLoggedIn);
-
-}, [])
 
 
   return (
@@ -55,7 +39,7 @@ useEffect(() => {
     <Route
       path="/admin"
       element={
-        localStorage.getItem("admin")=='true' ? (
+        localStorage.getItem("admin")==='true' ? (
           <Navigate to="/admindashboard" />
         ) : (
           <AdminLogin/>
@@ -65,7 +49,7 @@ useEffect(() => {
     <Route
       path="/vendor"
       element={
-        localStorage.getItem("vendor")=='true' ? (
+        localStorage.getItem("vendor")==='true' ? (
           <Navigate to="/vendordashboard/:id" />
         ) : (
       <VendorLogin/>)}
@@ -85,19 +69,7 @@ useEffect(() => {
     </>
   );
 }
-
 export default App;
 
 
- {/* <Route path="/admindashboard"  element={isAdminLoggedIn?<AdminDashboard />:<Navigate to='/'/>} />
-     <Route path="/vendortracker/:id" element={isAdminLoggedIn?<VendorTracker />:<Navigate to='/admin'/>} />
-    <Route path="/vendordashboard/:id" element={isVendorLoggedIn?<VendorDashboard/>:<Navigate to='/vendor'/>} />  */}
-    {/* <Route
-          path="/admindashboard"
-          element={<PrivateRoute component={AdminDashboard} isAuthenticated={isAdminLoggedIn} redirectTo="/admin" />}
-        />
-
-        <Route
-          path="/vendor/vendordashboard/:id"
-          element={<PrivateRoute component={VendorDashboard} isAuthenticated={isVendorLoggedIn} redirectTo="/vendor" />}
-        /> */}
+ 

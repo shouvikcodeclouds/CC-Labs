@@ -487,15 +487,21 @@ input:checked + .slider:before {
 .form-err{
   margin:0 20px;
 }
-@media (max-width: 767px) {
+@media (max-width: 777px) {
   .footer-section {
     margin-bottom: 20px;
    
+  }
+  .wavy-background {
+    height: 300px;
   }
 }
   @media (max-width:400px) {
     .category-input{
       width: 65%;
+    }
+    .wavy-background {
+      height: 430px;
     }
 }
 @keyframes loadingA {

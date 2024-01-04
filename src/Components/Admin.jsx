@@ -121,7 +121,7 @@ const Admin = () => {
               <MenuItem value="all" disabled>
                 Filter by Status
               </MenuItem>
-              <MenuItem value="all">Both</MenuItem>
+              <MenuItem value="all">All</MenuItem>
               <MenuItem value="active">Active</MenuItem>
               <MenuItem value="inactive">Inactive</MenuItem>
             </Select>

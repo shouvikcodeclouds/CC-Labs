@@ -242,7 +242,7 @@ const VendorDashboard = () => {
                 onChange={(e) => setPrice(e.target.value)}
               />
             ) : (
-              <Typography variant="body1">${vendorInfo?.price}</Typography>
+              <Typography variant="body1">{vendorInfo?.price&&`$ ${vendorInfo?.price}`}</Typography>
             )}
             <IconButton
               sx={{ position: 'absolute', top: '8px', right: '8px' }}

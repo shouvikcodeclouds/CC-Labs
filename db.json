@@ -69,6 +69,16 @@
       "category": "",
       "description": "",
       "price": ""
+    },
+    {
+      "id": "ba8891ea-1ff9-4e43-871f-45efccfe358e",
+      "name": "Vendor2",
+      "email": "vendor2@cc.com",
+      "password": "password123",
+      "isActive": true,
+      "category": "electric appliance repairing",
+      "description": "any",
+      "price": "35.70"
     }
   ],
   "categories": [
@@ -111,6 +121,11 @@
       "id": "8",
       "name": "Kitchen appliance repairing",
       "value": "kitchen appliance repairing"
+    },
+    {
+      "id": "9",
+      "name": "new category",
+      "value": "new category"
     }
   ]
 }

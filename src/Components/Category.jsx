@@ -41,7 +41,7 @@ const Category = () => {
       <h2 className="category-heading">Categories</h2>
       <ul className="category-list">
         {categories.map(category => (
-          <li key={category.value} className="category-item">
+          <li key={category.id} className="category-item">
             <span>{category.name}</span>
           </li>
         ))}
