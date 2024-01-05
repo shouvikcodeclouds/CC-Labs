@@ -24,7 +24,6 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-import Category from './Category';
 
 
 const Admin = () => {
@@ -80,8 +79,8 @@ const Admin = () => {
   const handleSearch = () => {
     const filteredVendors = vendorData.filter(
       (vendor) =>
-        vendor.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        (categoryFilter === 'all' || vendor.category === categoryFilter) &&
+        vendor.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        (vendor?.category.toLowerCase().includes(searchTerm.toLowerCase()) ) &&
         (statusFilter === 'all' ||
           (vendor.isActive && statusFilter === 'active') ||
           (!vendor.isActive && statusFilter === 'inactive'))
@@ -131,7 +130,7 @@ const Admin = () => {
       <div className="search-container">
         <TextField
   className="search-input"
-  label="Search by Name"
+  label="Search by Name or Category"
   variant="outlined"
   size="small"
   style={{ width: '100%', maxWidth: '100%' }} 

@@ -15,7 +15,7 @@
       "name": "test2",
       "email": "test2@codeclouds.com",
       "password": "Okay1234",
-      "isActive": false,
+      "isActive": true,
       "category": "",
       "description": "",
       "price": ""
@@ -45,20 +45,20 @@
       "name": "test5",
       "email": "test@test.com",
       "password": "ssss1234",
-      "isActive": false,
-      "category": "",
-      "description": "",
-      "price": ""
+      "isActive": true,
+      "category": "wall painting",
+      "description": "Adding textures, oil painting,tiles and graffiti",
+      "price": "45.50"
     },
     {
       "id": "f8b9bb08-7f64-4908-9b6c-2dca6688178e",
       "name": "Sayan",
       "email": "sayan@gmail.com",
       "password": "pass1234",
-      "isActive": false,
-      "category": "",
-      "description": "",
-      "price": ""
+      "isActive": true,
+      "category": "kitchen appliance repairing",
+      "description": "Best modular kitchen in town",
+      "price": "50.55"
     },
     {
       "id": "1a4b1068-7c09-4543-936c-4cdda3ab788f",
@@ -73,7 +73,7 @@
     {
       "id": "ba8891ea-1ff9-4e43-871f-45efccfe358e",
       "name": "Vendor2",
-      "email": "vendor2@cc.com",
+      "email": "vendor2@codec.com",
       "password": "password123",
       "isActive": true,
       "category": "electric appliance repairing",
