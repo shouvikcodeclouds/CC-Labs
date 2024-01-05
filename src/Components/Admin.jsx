@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   Table,
   TableBody,
@@ -37,6 +37,7 @@ const Admin = () => {
   const [categoryFilter, setCategoryFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
   const navigate = useNavigate();
+  const btnref=useRef(null);
 
   useEffect(() => {
     axios.get('http://localhost:8800/vendors').then((res) => {
@@ -134,11 +135,16 @@ const Admin = () => {
   variant="outlined"
   size="small"
   style={{ width: '100%', maxWidth: '100%' }} 
-  onChange={(e) => setSearchTerm(e.target.value)}
+  onChange={(e) => {
+    setSearchTerm(e.target.value)
+    setTimeout(() => {
+      btnref.current.click();
+    }, 1500);
+  }}
   InputProps={{
     endAdornment: (
       <InputAdornment position="end">
-        <IconButton className="search-button" onClick={handleSearch}>
+        <IconButton ref={btnref} className="search-button" onClick={handleSearch}>
           <SearchIcon />
         </IconButton>
       </InputAdornment>
