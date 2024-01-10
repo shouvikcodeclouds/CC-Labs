@@ -100,10 +100,7 @@ body {
 .active{
   color: #27ae60;
 }
-.inactive{
-  color: red;
-  margin-top: 20px!important;
-}
+
 .login-signup-options {
   margin-top: 20px;
   display: flex;
@@ -367,6 +364,7 @@ input:checked + .slider:before {
   padding: 1rem;
 
 }
+
 .selectElement {
   width: 100%;
   padding: 12px;

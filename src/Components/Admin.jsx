@@ -193,19 +193,26 @@ const Admin = () => {
 
         <TableContainer component={Paper} className="table-container">
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead className="table-header">
+            <TableHead className='table-header'>
               <TableRow>
-                <TableCell align="left">Name</TableCell>
-                <TableCell align="left">Id</TableCell>
-                <TableCell align="center">Category</TableCell>
-                <TableCell align="center">Status</TableCell>
-                <TableCell>Description</TableCell>
-                <TableCell>Cost per hour</TableCell>
+                <TableCell align="left" sx={{color:'white',fontWeight:'bold'}}>Name</TableCell>
+                <TableCell align="left" sx={{color:'white',fontWeight:'bold'}}>Vendor ID</TableCell>
+                <TableCell align="center" sx={{color:'white',fontWeight:'bold'}}>Category</TableCell>
+                <TableCell align="center" sx={{color:'white',fontWeight:'bold'}}>Status</TableCell>
+                <TableCell sx={{color:'white',fontWeight:'bold'}}>Description</TableCell>
+                <TableCell sx={{color:'white',fontWeight:'bold'}}>Cost per hour</TableCell>
                 <TableCell />
               </TableRow>
             </TableHead>
             <TableBody>
-              {(filteredData.length > 0 ? filteredData : vendorData)
+            {(filteredData.length === 0 && (searchTerm||statusFilter!=='all')) ? (
+              <TableRow>
+                <TableCell colSpan={7} align="center">
+                <p className='inactive'>  No data found. </p>
+                </TableCell>
+              </TableRow>
+            ) : (
+              (filteredData.length > 0 ? filteredData : vendorData)
                 .slice(pg * rpg, pg * rpg + rpg)
                 .map((vendor) => (
                   <TableRow
@@ -233,7 +240,7 @@ const Admin = () => {
                       <MoreVertIcon onClick={(e) => handleDropdown(e, vendor.id)} sx={{cursor:'pointer'}} />
                     </TableCell>
                   </TableRow>
-                ))}
+                )))}
             </TableBody>
           </Table>
         </TableContainer>

@@ -39,6 +39,16 @@
       "category": "electric appliance repairing",
       "description": "any",
       "price": "35.70"
+    },
+    {
+      "id": "02b4ff0e-5f4e-4a75-bb19-6168e3bf945f",
+      "name": "Manish",
+      "email": "manish@gmail.com",
+      "password": "pass12345",
+      "isActive": true,
+      "category": "new category",
+      "description": "Sliding doors and windows available.",
+      "price": "45.50"
     }
   ],
   "categories": [
