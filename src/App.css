@@ -6,6 +6,7 @@
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
+  
 }
 
 .navbar {
@@ -350,9 +351,9 @@ input:checked + .slider:before {
 .custom-paper {
   padding: 15px;
   text-align: center;
-  color: #000; /* Your text color */
-  background-color: #fff; /* Your background color */
-  border: 1px solid #ccc; /* Your border styles */
+  color: #000; 
+  background-color: #fff; 
+  border: 1px solid #ccc; 
   border-radius: 5px;
 }
 

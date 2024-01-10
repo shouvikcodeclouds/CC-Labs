@@ -13,7 +13,7 @@ const Homepage = () => {
   };
 
   return (
-    <>
+    <div className='homepage'>
     <div className='wavy-background'>
       <Box p={3} textAlign="center">
         <Typography variant="h4" gutterBottom>
@@ -87,7 +87,7 @@ const Homepage = () => {
       </div>
 
      
-    </>
+    </div>
   );
 };
 

@@ -11,26 +11,6 @@
       "price": "33.45"
     },
     {
-      "id": "32d95058-1fb7-416a-be79-a66a359679c6",
-      "name": "test2",
-      "email": "test2@codeclouds.com",
-      "password": "Okay1234",
-      "isActive": true,
-      "category": "",
-      "description": "",
-      "price": ""
-    },
-    {
-      "id": "ba38da29-77b9-4227-a5b1-44d2b6f2032f",
-      "name": "shouvik2",
-      "email": "shouvik@cc.co.in",
-      "password": "12345ABCD",
-      "isActive": true,
-      "category": "",
-      "description": "huh",
-      "price": ""
-    },
-    {
       "id": "ffaa25fe-e62f-407c-97bb-29f50ac54ab9",
       "name": "Dibyendu",
       "email": "dibyendu@cc.com",
@@ -41,16 +21,6 @@
       "price": "45.70"
     },
     {
-      "id": "92e326e8-2123-476a-92d8-3a503ea7e636",
-      "name": "test5",
-      "email": "test@test.com",
-      "password": "ssss1234",
-      "isActive": true,
-      "category": "wall painting",
-      "description": "Adding textures, oil painting,tiles and graffiti",
-      "price": "45.50"
-    },
-    {
       "id": "f8b9bb08-7f64-4908-9b6c-2dca6688178e",
       "name": "Sayan",
       "email": "sayan@gmail.com",
@@ -59,16 +29,6 @@
       "category": "kitchen appliance repairing",
       "description": "Best modular kitchen in town",
       "price": "50.55"
-    },
-    {
-      "id": "1a4b1068-7c09-4543-936c-4cdda3ab788f",
-      "name": "vendor",
-      "email": "vendor@gmail.com",
-      "password": "pass1234",
-      "isActive": false,
-      "category": "",
-      "description": "",
-      "price": ""
     },
     {
       "id": "ba8891ea-1ff9-4e43-871f-45efccfe358e",

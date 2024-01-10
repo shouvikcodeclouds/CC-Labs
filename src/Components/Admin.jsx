@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
+  Button,
   Table,
   TableBody,
   TableCell,
@@ -16,6 +17,11 @@ import {
   InputAdornment,
   Grid,
   Typography,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText, 
+  DialogTitle
 } from '@mui/material';
 
 import SearchIcon from '@mui/icons-material/Search';
@@ -31,6 +37,7 @@ const Admin = () => {
   const [pg, setPg] = useState(0);
   const [rpg, setRpg] = useState(5);
   const [dropdown, setDropdown] = useState(null);
+  const [open, setOpen] = useState(null);
   const [uid, setUid] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -75,6 +82,7 @@ const Admin = () => {
         console.error('Error deleting vendor:', error);
         setDropdown(null);
       });
+      setOpen(false)
   };
 
   const handleSearch = () => {
@@ -101,6 +109,7 @@ const Admin = () => {
     );
   
     setFilteredData(filteredVendors);
+   
   };
 
   return (
@@ -252,14 +261,29 @@ const Admin = () => {
           <div className="custom-dropdown">
             <ul>
               <li onClick={() => navigate(`/vendortracker/${uid}`)}>Edit</li>
-              <li className="delete-button" onClick={handleDelete}>
+              <li className="delete-button" onClick={()=>setOpen(true)}>
                 Delete
               </li>
             </ul>
           </div>
         </Popover>
       </div>
-      
+      <Dialog open={open} onClose={()=>setOpen(false)}>
+      <DialogTitle>Confirm Delete</DialogTitle>
+      <DialogContent>
+        <DialogContentText>
+          Are you sure you want to delete this vendor information?
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button onClick={()=>setOpen(false)} color="primary">
+          Cancel
+        </Button>
+        <Button onClick={handleDelete} color="error" autoFocus>
+          Delete
+        </Button>
+      </DialogActions>
+    </Dialog>
     </>
   );
 };
