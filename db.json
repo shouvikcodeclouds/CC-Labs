@@ -56,6 +56,16 @@
       "id": "10",
       "name": "Carpentry",
       "value": "carpentry"
+    },
+    {
+      "id": "11",
+      "name": "App development",
+      "value": "app development"
+    },
+    {
+      "id": "12",
+      "name": "Web development",
+      "value": "web development"
     }
   ]
 }

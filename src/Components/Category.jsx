@@ -17,7 +17,7 @@ const Category = () => {
       .catch(error => {
         console.error('Error fetching categories:', error);
       });
-  }, []);
+  }, [categories]);
 
   const handleAddCategory = async (e) => {
     
@@ -31,11 +31,11 @@ const Category = () => {
         name: newCategory,
         value: newCategory.toLowerCase()
     }
-    axios.post('http://localhost:8800/categories', body,header)
+    await axios.post('http://localhost:8800/categories', body,header)
       .then(res => {
         console.log(res)
       })
-      axios.get('http://localhost:8800/categories')
+     await axios.get('http://localhost:8800/categories')
       .then(res => {
         setCategories(res.data);
       })

@@ -271,22 +271,7 @@ const Admin = () => {
           </div>
         </Popover>
       </div>
-      {/* <Dialog open={open} onClose={()=>setOpen(false)}>
-      <DialogTitle>Confirm Delete</DialogTitle>
-      <DialogContent>
-        <DialogContentText>
-          Are you sure you want to delete this vendor information?
-        </DialogContentText>
-      </DialogContent>
-      <DialogActions>
-        <Button onClick={()=>setOpen(false)} color="primary">
-          Cancel
-        </Button>
-        <Button onClick={handleDelete} color="error" autoFocus>
-          Delete
-        </Button>
-      </DialogActions>
-    </Dialog> */}
+     
     <Modal 
     onClose={()=>setOpen(false)} 
     onClick={handleDelete} 
