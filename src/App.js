@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
 import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
@@ -17,24 +17,11 @@ import VendorTracker from './Pages/VendorTracker';
 
 function App() {
 
-
-
   return (
     <>
-    {/* <Header/>
-    <Homepage/>
-    <AdminLogin/>
-    <VendorSignup/>
-    <VendorLogin/>
-    <AdminDashboard/>
-    <VendorDashboard/>
-   <Footer/> */}
-   <BrowserRouter>
-   
+   <BrowserRouter>  
    <Header/>
- 
-  <Routes>
-  
+   <Routes>
     <Route path="/" exact element={<Homepage />} />
     <Route
       path="/admin"
@@ -55,9 +42,11 @@ function App() {
       <VendorLogin/>)}
     />
     <Route path="/signup" element={<VendorSignup />} />
+
     <Route path="/admindashboard"  element={<AdminDashboard />} />
     <Route path="/vendortracker/:id"  element={<VendorTracker />} />
-     {/* <Route path="/vendortracker/:id" element={<VendorTracker />} /> */}
+   
+
     <Route path="/vendordashboard/:id" element={<VendorDashboard/>} />
     
        

@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Modal from './Modal';
 
 const Category = () => {
   const [categories, setCategories] = useState([{}]);
   const [newCategory, setNewCategory] = useState('');
+  const [open,setOpen]=useState(false);
+  const [uid,setUid]=useState('')
 
   useEffect(() => {
     axios.get('http://localhost:8800/categories')
@@ -16,12 +20,14 @@ const Category = () => {
   }, []);
 
   const handleAddCategory = async (e) => {
+    
     e.preventDefault();
+    const newCategoryId=parseInt(categories[categories.length-1].id)+1;
     const header={
         'Content-Type': 'application/json'
     }
     const body={
-        id:(categories.length+1).toString(),
+        id:(newCategoryId).toString(),
         name: newCategory,
         value: newCategory.toLowerCase()
     }
@@ -36,6 +42,24 @@ const Category = () => {
       setNewCategory('')
   };
 
+  const handleDelete = (uid) => {
+    axios
+      .delete(`http://localhost:8800/categories/${uid}`)
+      .then((res) => {
+        setCategories((prevData) => prevData.filter((category) => category.id !== uid));
+      })
+      .catch((error) => {
+        console.error('Error deleting vendor:', error);
+      
+      });
+      axios.get('http://localhost:8800/categories')
+      .then(res => {
+        setCategories(res.data);
+      })
+      setOpen(false)
+  };
+
+
   return (
     <div className="category-container">
       <h2 className="category-heading">Categories</h2>
@@ -43,6 +67,16 @@ const Category = () => {
         {categories.map(category => (
           <li key={category.id} className="category-item">
             <span>{category.name}</span>
+            <span onClick={()=>{
+                setOpen(true)
+                setUid(category.id)
+            }}>
+                <DeleteIcon 
+                sx={{
+                    color:'red',
+                    cursor:'pointer'
+                    }}/>
+            </span>
           </li>
         ))}
       </ul>
@@ -61,6 +95,12 @@ const Category = () => {
           Add Category
         </button>
       </div>
+      <Modal 
+      onClose={()=>setOpen(false) }
+      onClick={()=>handleDelete(uid)}
+      open={open}
+      desc="category"
+      />
     </div>
   );
 };

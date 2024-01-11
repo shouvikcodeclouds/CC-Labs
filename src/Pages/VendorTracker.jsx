@@ -143,23 +143,9 @@ const VendorTracker = () => {
 
 
       {load && (
-        <Box
-          sx={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(255, 255, 255, 0.7)',
-            zIndex: 1000,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backdropFilter: 'blur(5px)',
-          }}
-        >
+       
           <Loader />
-        </Box>
+        
         )}
     </>
   );

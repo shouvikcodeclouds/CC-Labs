@@ -75,13 +75,9 @@ import CreateIcon from '@mui/icons-material/Create';
       const handleSaveChanges = () => {
       
             setEditName(false);
-
             setEditEmail(false);
-
             setEditDescription(false);
-
             setEditPrice(false);
-
             setEditServiceProvided(false);
 
         const body = {
@@ -283,7 +279,7 @@ import CreateIcon from '@mui/icons-material/Create';
                 >
                   {categoryOption &&
                     categoryOption?.map((category) => (
-                      <option key={category.value} value={category.value}>
+                      <option key={category.id} value={category.value}>
                         {category.name}
                       </option>
                     ))}

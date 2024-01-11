@@ -16,12 +16,7 @@ import {
   MenuItem,
   InputAdornment,
   Grid,
-  Typography,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText, 
-  DialogTitle
+ 
 } from '@mui/material';
 
 import SearchIcon from '@mui/icons-material/Search';
@@ -29,6 +24,7 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Modal from './Modal';
 
 
 
@@ -37,7 +33,7 @@ const Admin = () => {
   const [pg, setPg] = useState(0);
   const [rpg, setRpg] = useState(5);
   const [dropdown, setDropdown] = useState(null);
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState(false);
   const [uid, setUid] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
@@ -266,7 +262,7 @@ const Admin = () => {
           }}
         >
           <div className="custom-dropdown">
-            <ul>
+            <ul onClick={()=>setDropdown(null)}>
               <li onClick={() => navigate(`/vendortracker/${uid}`)}>Edit</li>
               <li className="delete-button" onClick={()=>setOpen(true)}>
                 Delete
@@ -275,7 +271,7 @@ const Admin = () => {
           </div>
         </Popover>
       </div>
-      <Dialog open={open} onClose={()=>setOpen(false)}>
+      {/* <Dialog open={open} onClose={()=>setOpen(false)}>
       <DialogTitle>Confirm Delete</DialogTitle>
       <DialogContent>
         <DialogContentText>
@@ -290,7 +286,13 @@ const Admin = () => {
           Delete
         </Button>
       </DialogActions>
-    </Dialog>
+    </Dialog> */}
+    <Modal 
+    onClose={()=>setOpen(false)} 
+    onClick={handleDelete} 
+    open={open}
+    desc="vendor"
+    />
     </>
   );
 };

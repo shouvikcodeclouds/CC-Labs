@@ -5,7 +5,6 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import {  ThemeProvider } from '@mui/material/styles';
-//import Dashboard from './Dashboard';
 import { admin } from '../_mock/admin';
 import { useNavigate } from 'react-router-dom';
 
@@ -33,7 +32,7 @@ setLogin({...login,
     e.preventDefault();
     
     console.log("submit")
-    if(admin.email==login.email&&admin.password==login.password){
+    if(admin.email===login.email&&admin.password===login.password){
         console.log("success")
         localStorage.setItem("admin",true)
         setTimeout(() => {

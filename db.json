@@ -1,16 +1,6 @@
 {
   "vendors": [
     {
-      "id": "5607c32b-28ef-45ee-8dd1-2c3144e5dbca",
-      "name": "test",
-      "email": "test@test.com",
-      "password": "cccc1234",
-      "isActive": true,
-      "category": "web design",
-      "description": "cccccv",
-      "price": "33.45"
-    },
-    {
       "id": "ffaa25fe-e62f-407c-97bb-29f50ac54ab9",
       "name": "Dibyendu",
       "email": "dibyendu@cc.com",
@@ -31,22 +21,12 @@
       "price": "50.55"
     },
     {
-      "id": "ba8891ea-1ff9-4e43-871f-45efccfe358e",
-      "name": "Vendor2",
-      "email": "vendor2@codec.com",
-      "password": "password123",
-      "isActive": true,
-      "category": "electric appliance repairing",
-      "description": "any",
-      "price": "35.70"
-    },
-    {
       "id": "02b4ff0e-5f4e-4a75-bb19-6168e3bf945f",
       "name": "Manish",
       "email": "manish@gmail.com",
       "password": "pass12345",
       "isActive": true,
-      "category": "new category",
+      "category": "carpentry",
       "description": "Sliding doors and windows available.",
       "price": "45.50"
     }
@@ -63,26 +43,6 @@
       "value": "interior decoration"
     },
     {
-      "id": "3",
-      "name": "Food Delivery",
-      "value": "food delivery"
-    },
-    {
-      "id": "4",
-      "name": "Other",
-      "value": "other"
-    },
-    {
-      "id": "5",
-      "name": "name",
-      "value": "value"
-    },
-    {
-      "id": "6",
-      "name": "Wall Painting",
-      "value": "wall painting"
-    },
-    {
       "id": "7",
       "name": "Electric appliance repairing",
       "value": "electric appliance repairing"
@@ -93,9 +53,9 @@
       "value": "kitchen appliance repairing"
     },
     {
-      "id": "9",
-      "name": "new category",
-      "value": "new category"
+      "id": "10",
+      "name": "Carpentry",
+      "value": "carpentry"
     }
   ]
 }
