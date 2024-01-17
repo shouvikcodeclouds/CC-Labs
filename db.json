@@ -67,5 +67,18 @@
       "name": "Web development",
       "value": "web development"
     }
+  ],
+  "customers": [
+    {
+      "id": "e9241f7f-1e73-44e4-9845-0ee8d2e28e66",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "shouvik.das@gmail.com",
+      "password": "pass12345",
+      "address": "test",
+      "address2": "",
+      "phoneNumber": "9888888888",
+      "pincode": "12345"
+    }
   ]
 }
