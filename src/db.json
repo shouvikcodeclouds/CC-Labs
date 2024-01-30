@@ -25,7 +25,7 @@
       "name": "Manish",
       "email": "manish@gmail.com",
       "password": "pass12345",
-      "isActive": true,
+      "isActive": false,
       "category": "carpentry",
       "description": "Sliding doors and windows available.",
       "price": "45.50"
@@ -285,7 +285,7 @@
       "city": "Andritz",
       "country": "Austria",
       "state": "Styria",
-      "phoneNumber": "+4398888877",
+      "phoneNumber": "+4398888888",
       "pincode": "12345"
     }
   ]

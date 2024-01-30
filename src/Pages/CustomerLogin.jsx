@@ -40,7 +40,7 @@ const CustomerLogin = () => {
           if(isAuthenticated){
             const id=isAuthenticated.id;
         localStorage.setItem("customer",true)
-        //navigate(`/vendordashboard/${id}`)
+        navigate(`/customerpage/${id}`)
           }
          else{
             setError(true);
@@ -109,8 +109,6 @@ const CustomerLogin = () => {
             </Box>
           
           </Container>
-  
-    
     </>
   )
 }

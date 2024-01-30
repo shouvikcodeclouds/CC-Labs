@@ -3,6 +3,8 @@ import React,{useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 import avatar from '../images/avatar.png'
 import vendor from '../images/vendor.png'
+import customer from '../images/customer.jpeg'
+
 
 import { KeyboardArrowDown } from '@mui/icons-material';
 
@@ -14,6 +16,7 @@ const Header = () => {
   const handleLogout = () => {
       localStorage.setItem('admin',false)
       localStorage.setItem('vendor',false)
+      localStorage.setItem('customer',false)
       setTimeout(() => {
         navigate('/')
         setDropdown(null)
@@ -39,9 +42,9 @@ const Header = () => {
         <div className="site-name" onClick={()=>navigate("/")}>Multilevel App</div>
         <div className="login-container">
         {
-        (localStorage.getItem('admin')=="true"||localStorage.getItem('vendor')=="true")&&
+        (localStorage.getItem('admin')=="true"||localStorage.getItem('vendor')=="true")||(localStorage.getItem('customer')=="true")&&
         <>
-          <Avatar alt="S" src={ (localStorage.getItem('admin')=="true")?avatar:vendor} >
+          <Avatar alt="S" src={ (localStorage.getItem('admin')=="true")?avatar: (localStorage.getItem('vendor')=="true")?vendor:customer} >
             
             </Avatar>
             <IconButton onClick={handleDropdown}>

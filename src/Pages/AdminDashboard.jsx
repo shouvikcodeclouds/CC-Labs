@@ -2,6 +2,7 @@ import { Typography } from '@mui/material';
 import React,{useState} from 'react'
 import Admin from '../Components/Admin';
 import Category from '../Components/Category';
+import CustomerData from '../Components/CustomerDetails';
 import { admin } from '../_mock/admin';
 
 
@@ -27,10 +28,17 @@ const AdminDashboard = () => {
         >
           Categories
         </button>
+        <button
+          className={`tab tab-button ${activeTab === 'tab3' ? 'active-tab' : ''}`}
+          onClick={() => handleTabChange('tab3')}
+        >
+          Customer Info
+        </button>
       </div>
       <div className="tab-content">
         {activeTab === 'tab1' && <><Admin/></>}
         {activeTab === 'tab2' && <><Category/></>}
+        {activeTab === 'tab3' && <><CustomerData/></>}
       </div>
     </>
     

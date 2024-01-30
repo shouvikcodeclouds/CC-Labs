@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+ 
 }
 body {
   margin: 0;
@@ -119,7 +120,7 @@ body {
   position: fixed;
   bottom: 0;
   min-width: 100%;
-  max-height: 10rem;
+  max-height: 5rem;
 }
 
 .container {
@@ -486,6 +487,76 @@ input:checked + .slider:before {
 .form-err{
   margin:0 20px;
 }
+
+/* styles.css */
+
+/* Common styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Paper styles */
+.paper {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+/* Typography styles */
+.welcome-text {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.section-heading {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.data-grid {
+  margin-bottom: 20px;
+}
+
+.user-data {
+  font-weight: bold;
+  color: #333;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+.text-field-state{
+  margin-top: 23px;
+}
+@media (max-width: 768px) {
+  .paper {
+    padding: 16px;
+  }
+}
+
+
 @media (max-width: 777px) {
   .footer-section {
     margin-bottom: 20px;
@@ -501,6 +572,10 @@ input:checked + .slider:before {
     }
     .wavy-background {
       height: 430px;
+    }
+    svg{
+      transform: translateY(-128px);
+      z-index: -999;
     }
 }
 @keyframes loadingA {

@@ -34,4 +34,4 @@ const Modal = ({onClose,onClick,open,desc}) => {
   )
 }
 
-export default Modal
+export default Modal;

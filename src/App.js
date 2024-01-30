@@ -14,6 +14,7 @@ import VendorDashboard from './Pages/VendorDashboard';
 import VendorTracker from './Pages/VendorTracker';
 import CustomerSignup from './Pages/CustomerSignup';
 import CustomerLogin from './Pages/CustomerLogin';
+import CustomerHome from './Pages/CustomerHome';
 
 
 
@@ -52,6 +53,7 @@ function App() {
     <Route path="/vendordashboard/:id" element={<VendorDashboard/>} />
     <Route path="/customer" element={<CustomerSignup/>} />
     <Route path="/customerlogin" element={<CustomerLogin/>} />
+    <Route path="/customerpage/:id" element={<CustomerHome/>} />
     
        
         
