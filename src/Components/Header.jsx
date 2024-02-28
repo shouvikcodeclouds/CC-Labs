@@ -1,5 +1,5 @@
 import { Avatar,IconButton, Popover } from '@mui/material';
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import avatar from '../images/avatar.png'
 import vendor from '../images/vendor.png'
@@ -33,6 +33,13 @@ const Header = () => {
         
     };
 
+useEffect(() => {
+  console.log(localStorage.getItem('admin'));
+  console.log(localStorage.getItem('vendor'));
+  console.log(localStorage.getItem('customer'));
+
+  
+}, [localStorage.getItem('admin'),(localStorage.getItem('vendor')),localStorage.getItem('customer')])
 
   return (
     <div>
@@ -42,7 +49,7 @@ const Header = () => {
         <div className="site-name" onClick={()=>navigate("/")}>Multilevel App</div>
         <div className="login-container">
         {
-        (localStorage.getItem('admin')=="true"||localStorage.getItem('vendor')=="true")||(localStorage.getItem('customer')=="true")&&
+        (localStorage.getItem('admin')=="true"||localStorage.getItem('vendor')==="true")||(localStorage.getItem('customer')==="true")?
         <>
           <Avatar alt="S" src={ (localStorage.getItem('admin')=="true")?avatar: (localStorage.getItem('vendor')=="true")?vendor:customer} >
             
@@ -50,7 +57,8 @@ const Header = () => {
             <IconButton onClick={handleDropdown}>
                 <KeyboardArrowDown />
               </IconButton>
-              </>
+              </>:
+              <div></div>
               }
         </div>
       </div>

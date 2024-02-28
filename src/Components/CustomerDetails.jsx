@@ -97,12 +97,12 @@ const CustomerData = () => {
     
      <div className="admin-dashboard-container">
     <Grid container spacing={2}>
-     
-      <Grid item sm={4}>
+    <Grid item sm={6}></Grid>
+      <Grid item sm={6}>
       <div className="search-container">
         <TextField
   className="search-input"
-  label="Search by Name or Category"
+  label="Search by customer name"
   variant="outlined"
   size="small"
   style={{ width: '100%', maxWidth: '100%' }} 
@@ -148,11 +148,6 @@ const CustomerData = () => {
   </div>
       </Grid>
     </Grid>
-     
-       
-
-        
-
         <TableContainer component={Paper} className="table-container">
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead className='table-header'>
@@ -242,4 +237,3 @@ const CustomerData = () => {
 };
 
 export default CustomerData;
- //

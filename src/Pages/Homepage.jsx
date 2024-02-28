@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Box, Typography, Button, Paper, Grid } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../Components/Footer'
+
 
 const Homepage = () => {
   const [userType, setUserType] = useState('');
@@ -56,7 +56,7 @@ const Homepage = () => {
           <Grid item>
             <Paper elevation={3} sx={{ padding: 2, textAlign: 'center' }}>
               <Typography variant="h6" gutterBottom>
-                {`Login ${userType === 'vendor' ? '/Signup' : ''} as ${userType}`}
+                {`Login ${userType === 'vendor' ? '/Signup' : ''} as ${userType}`}    
               </Typography>
               <Button
                 variant="contained"
@@ -83,7 +83,7 @@ const Homepage = () => {
       <svg viewBox="0 0 500 200">
   <path d="M 0 30 C 150 100 280 0 500 20 L 500 0 L 0 0" fill="rgb(47, 117, 203)"></path>
 </svg>
-<Footer/>
+
       </div>
 
      

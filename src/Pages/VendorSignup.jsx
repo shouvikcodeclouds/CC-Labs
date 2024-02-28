@@ -29,7 +29,7 @@ setFormData({...formData,
 }
 const handleBlur=(e)=>{
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if(!re.test(String(formData.email).toLowerCase())){
+  if(!re.test(String(formData.email).toLowerCase())&&formData.email.length>0){
     
     
     setEmailErr(true);
@@ -160,11 +160,11 @@ const handleSubmit =  e => {
    
       </Container>
       <Snackbar
-    open={open}
-    onClose={()=>setopen(false)}
-    autoHideDuration={2000}
-    message="Your Account has been successfully created"
->
+       open={open}
+       onClose={()=>setopen(false)}
+       autoHideDuration={2000}
+       message="Your Account has been successfully created"
+    >
  <Alert onClose={()=>setopen(false)}  severity="success" sx={{ width: '100%'  }}>
   Your Account has been successfully created
   </Alert>

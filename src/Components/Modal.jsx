@@ -18,7 +18,7 @@ const Modal = ({onClose,onClick,open,desc}) => {
       <DialogTitle>Confirm Delete</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Are you sure you want to delete this {desc} information?
+        < Typography variant='h3'>  Are you sure you want to delete this {desc} information?</Typography>
         </DialogContentText>
       </DialogContent>
       <DialogActions>

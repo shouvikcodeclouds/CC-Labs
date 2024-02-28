@@ -26,19 +26,19 @@ const AdminDashboard = () => {
           className={`tab tab-button ${activeTab === 'tab2' ? 'active-tab' : ''}`}
           onClick={() => handleTabChange('tab2')}
         >
-          Categories
+         TrackCustomers
         </button>
         <button
           className={`tab tab-button ${activeTab === 'tab3' ? 'active-tab' : ''}`}
           onClick={() => handleTabChange('tab3')}
         >
-          Customer Info
+           Categories
         </button>
       </div>
       <div className="tab-content">
         {activeTab === 'tab1' && <><Admin/></>}
-        {activeTab === 'tab2' && <><Category/></>}
-        {activeTab === 'tab3' && <><CustomerData/></>}
+        {activeTab === 'tab2' && <><CustomerData/></>}
+        {activeTab === 'tab3' && <><Category/></>}
       </div>
     </>
     

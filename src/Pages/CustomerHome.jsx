@@ -9,20 +9,54 @@ import {
   Typography,
   Button,
   IconButton,
+  Avatar,
 } from '@mui/material';
 import CreateIcon from '@mui/icons-material/Create';
+import Fileupload from '../Components/Fileupload';
 
 const CustomerHome = () => {
   const { id } = useParams();
   const [customerInfo, setCustomerInfo] = useState({});
   const [editMode, setEditMode] = useState(false);
   const [editedFields, setEditedFields] = useState({});
+  const [file, setFile] = useState([])
+  const [image,setImage]=useState();
+  const [open,setOpen]=useState(false);
+
+    function handleChange(e,file) {
+      if (!file) {
+        console.log("no file")
+        return;
+      }
+      setFile(e.target.files[0])
+      console.log(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+      const base64String = reader.result;
+      setImage(base64String);
+    };
+   
+      reader.readAsDataURL(file);
+  
+  };
+
+    
+    
+    const handleSubmit=(e)=> {
+     
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('fileName', file?.name);
+      axios.patch(`http://localhost:8800/customers/${id}`, {image:image}).then((res) => {
+        console.log(res.data);
+        setCustomerInfo(res.data)
+      });}
 
   useEffect(() => {
     id &&
       axios
         .get(`http://localhost:8800/customers/${id}`)
-        .then((res) => setCustomerInfo(res.data))
+        .then((res) => setCustomerInfo(res.data)) 
         .catch((err) => console.error(err));
   }, [id]);
 
@@ -82,18 +116,21 @@ const CustomerHome = () => {
 
   return (
     <>
+   
       <Paper className="paper data-section">
         <Box textAlign="center" mb={3}>
           <Typography variant="h4" component="div" gutterBottom className="welcome-text">
             Welcome, {customerInfo?.firstName} {customerInfo?.lastName}
           </Typography>
+          <Avatar alt="Profile Picture" src={customerInfo.image} sx={{ width: 150, height: 150 }} onClick={()=>setOpen(true)}/>
+        
           {!editMode && (
             <IconButton onClick={handleEdit}>
               <CreateIcon />
             </IconButton>
           )}
         </Box>
-
+        <Fileupload open={open} onClose={()=>setOpen(false)} onUpload={handleSubmit} />
         {editMode ? (
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -239,21 +276,7 @@ const CustomerHome = () => {
 
 export default CustomerHome;
 
-// import axios from 'axios';
-// import React, { useState,useEffect } from 'react'
-// import { useParams } from 'react-router-dom';
-// import {
-//     Box,
-//     TextField,
-//     Grid,
-//     Paper,
-//     Typography,
-//     IconButton,
-//     Button,
-//     Alert,
-//     Snackbar,
-//   } from '@mui/material';
-//   import CreateIcon from '@mui/icons-material/Create';
+
 
 // const CustomerHome = () => {
 //     const { id } = useParams();
