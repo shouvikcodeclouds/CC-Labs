@@ -238,6 +238,7 @@ import CreateIcon from '@mui/icons-material/Create';
                 </Typography>
                 {editPrice ? (
                   <TextField
+                  type='number'
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                   />

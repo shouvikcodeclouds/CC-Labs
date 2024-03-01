@@ -55,6 +55,16 @@
       "name": "test13",
       "email": "test13@gmail.com",
       "password": "1234pass",
+      "isActive": true,
+      "category": "app development",
+      "description": "",
+      "price": "77.00"
+    },
+    {
+      "id": "d9db25bc-6ec8-4da7-8097-35e4f54bec05",
+      "name": "bidyut",
+      "email": "bidyut@g.co",
+      "password": "pass1234",
       "isActive": false,
       "category": "",
       "description": "",

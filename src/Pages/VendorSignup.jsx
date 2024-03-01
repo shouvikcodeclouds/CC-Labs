@@ -22,6 +22,8 @@ const VendorSignup = () => {
     const navigate=useNavigate()
 
 const handleChange=(e)=>{
+  setEmailErr(false)
+  setErr(false)
 setFormData({...formData,
     [e.target.name]:e.target.value
 })

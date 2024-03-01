@@ -24,7 +24,7 @@ const Homepage = () => {
         </Typography>
       </Box>
 
-      <Grid container justifyContent="center" alignItems="center" spacing={3}>
+      <Grid container justifyContent="center" alignItems="center" spacing={3} sx={{zIndex:999,position:'relative'}}>
         <Grid item>
           <Paper elevation={3} sx={{ padding: 2, textAlign: 'center' }}>
             <Typography variant="h6" gutterBottom>

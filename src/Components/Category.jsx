@@ -29,7 +29,7 @@ const Category = () => {
     const body={
         id:(newCategoryId).toString(),
         name: newCategory,
-        value: newCategory.toLowerCase()
+        value: newCategory
     }
     await axios.post('http://localhost:8800/categories', body,header)
       .then(res => {
