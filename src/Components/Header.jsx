@@ -34,9 +34,9 @@ const Header = () => {
   return (
     <div>
 
-        <nav className="navbar">
+      <nav className="navbar">
       <div className="navbar-container">
-        <div className="site-name" onClick={()=>navigate("/")}>Multilevel App</div>
+        <div className="site-name" onClick={()=>navigate("/")}>Marketplace App</div>
         <div className="login-container">
         {
         (localStorage.getItem('admin')=="true"||localStorage.getItem('vendor')=="true")&&

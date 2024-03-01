@@ -28,7 +28,37 @@
       "isActive": true,
       "category": "carpentry",
       "description": "Sliding doors and windows available.",
-      "price": "45.50"
+      "price": "45.59"
+    },
+    {
+      "id": "77a37127-9e1c-45d1-95fe-a209032b9be4",
+      "name": "Test11",
+      "email": "test@clc.co",
+      "password": "pass1234",
+      "isActive": true,
+      "category": "graffiti ",
+      "description": "We provide best graffiti at reasonable price",
+      "price": "55.44"
+    },
+    {
+      "id": "3d55ab17-81c8-415b-b9aa-8203b712566b",
+      "name": "test12",
+      "email": "test12@cc.com",
+      "password": "pass1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "ffe49c70-b0fa-4459-be66-92bbdaf01c1e",
+      "name": "test13",
+      "email": "test13@gmail.com",
+      "password": "1234pass",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
     }
   ],
   "categories": [
@@ -66,19 +96,11 @@
       "id": "12",
       "name": "Web development",
       "value": "web development"
-    }
-  ],
-  "customers": [
+    },
     {
-      "id": "e9241f7f-1e73-44e4-9845-0ee8d2e28e66",
-      "firstName": "test",
-      "lastName": "test",
-      "email": "shouvik.das@gmail.com",
-      "password": "pass12345",
-      "address": "test",
-      "address2": "",
-      "phoneNumber": "9888888888",
-      "pincode": "12345"
+      "id": "13",
+      "name": "Graffiti ",
+      "value": "graffiti "
     }
   ]
 }

@@ -29,6 +29,7 @@ import CreateIcon from '@mui/icons-material/Create';
       const [editDescription, setEditDescription] = useState(false);
       const [editPrice, setEditPrice] = useState(false);
       const [editServiceProvided, setEditServiceProvided] = useState(false);
+      const [edited, setEdited] = useState(false);
       const [open, setopen] = useState(false);
     
       useEffect(() => {
@@ -51,6 +52,7 @@ import CreateIcon from '@mui/icons-material/Create';
       }, []);
     
       const handleEdit = (field) => {
+        setEdited(true)
         switch (field) {
           case 'name':
             setEditName(prev=>!prev);
@@ -97,7 +99,7 @@ import CreateIcon from '@mui/icons-material/Create';
       return (
         <>
         {vendorInfo?.isActive ?"":( <div className='warningBox'>
-          You are not an active member as the admin has not approved your status yet.
+          You are not an active member as the admin has not approved your status yet. You can add your personal details after admin's approval
         </div>)}
           <Typography variant="h4" component="div" gutterBottom sx={{ margin: '15px' }}>
             Welcome {vendorInfo?.name}
@@ -130,13 +132,13 @@ import CreateIcon from '@mui/icons-material/Create';
                 ) : (
                   <Typography variant="body1">{vendorInfo?.name}</Typography>
                 )}
-                <IconButton
+               {vendorInfo?.isActive&& <IconButton
                   sx={{ position: 'absolute', top: '8px', right: '8px' }}
                   aria-label="Edit"
                   onClick={() => handleEdit('name')}
                 >
                   <CreateIcon />
-                </IconButton>
+                </IconButton>}
                 
               </Paper>
             </Grid>
@@ -168,13 +170,13 @@ import CreateIcon from '@mui/icons-material/Create';
                 ) : (
                   <Typography variant="body1">{vendorInfo?.email}</Typography>
                 )}
-                <IconButton
+                 {vendorInfo?.isActive&&  <IconButton
                   sx={{ position: 'absolute', top: '8px', right: '8px' }}
                   aria-label="Edit"
                   onClick={() => handleEdit('email')}
                 >
                   <CreateIcon />
-                </IconButton>
+                </IconButton>}
                 
               </Paper>
             </Grid>
@@ -205,13 +207,13 @@ import CreateIcon from '@mui/icons-material/Create';
                 ) : (
                   <Typography variant="body1">{vendorInfo?.description}</Typography>
                 )}
-                <IconButton
+                  {vendorInfo?.isActive&& <IconButton
                   sx={{ position: 'absolute', top: '8px', right: '8px' }}
                   aria-label="Edit"
                   onClick={() => handleEdit('description')}
                 >
                   <CreateIcon />
-                </IconButton>
+                </IconButton>}
                 
               </Paper>
             </Grid>
@@ -242,13 +244,13 @@ import CreateIcon from '@mui/icons-material/Create';
                 ) : (
                   <Typography variant="body1">{vendorInfo?.price&&`$ ${vendorInfo?.price}`}</Typography>
                 )}
-                <IconButton
+                 {vendorInfo?.isActive&&  <IconButton
                   sx={{ position: 'absolute', top: '8px', right: '8px' }}
                   aria-label="Edit"
                   onClick={() => handleEdit('price')}
                 >
                   <CreateIcon />
-                </IconButton>
+                </IconButton>}
                 
               </Paper>
             </Grid>
@@ -287,20 +289,20 @@ import CreateIcon from '@mui/icons-material/Create';
                 ) : (
                   <Typography variant="body1">{vendorInfo?.category}</Typography>
                 )}
-                <IconButton
+                {vendorInfo?.isActive&&<IconButton
                   sx={{ position: 'absolute', top: '8px', right: '8px' }}
                   aria-label="Edit"
                   onClick={() => handleEdit('serviceProvided')}
                 >
                   <CreateIcon />
-                </IconButton>
+                </IconButton>}
                 
               </Paper>
             </Grid>
           </Grid>
           <Box sx={{display:'flex',justifyContent:"center"}}>
                 
-            <Button
+           {edited&& <Button
 
               type="submit"
               fullWidth
@@ -309,7 +311,7 @@ import CreateIcon from '@mui/icons-material/Create';
               onClick={handleSaveChanges}
             >
               Submit
-            </Button>
+            </Button>}
           </Box>
           <Snackbar
         open={open}

@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Box, Grid, Typography, Button } from '@mui/material';
+import { Box, Grid, Typography, Button, IconButton } from '@mui/material';
 import Switch from '../Components/Switch';
 import Loader from '../Components/Loader';
+import { ArrowBack } from '@mui/icons-material';
+
 
 const VendorTracker = () => {
   const { id } = useParams();
@@ -67,15 +69,29 @@ const VendorTracker = () => {
 
   return (
     <>
+     <IconButton
+    onClick={() => navigate("/admindashboard")}
+    sx={{ position: 'absolute', 
+    top: '5rem', 
+    left: '1rem', 
+    zIndex: 999,
+    borderRadius:'50%',
+    background:"#cbc3c3",
     
+   }}
+  >
+    <ArrowBack />
+  </IconButton>
       <Box
   sx={{
     padding: '2rem',
-    maxWidth: '800px',
+    height:'100vh',
     margin: 'auto',
     boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.1)',
     borderRadius: '10px',
     background: '#ffffff',
+    display:'block',
+    paddingY:'15rem'
   }}
 >
   <Grid container spacing={3}>
