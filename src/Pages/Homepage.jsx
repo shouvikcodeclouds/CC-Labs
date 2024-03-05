@@ -67,7 +67,7 @@ const Homepage = () => {
                 }}
               >
                 Login
-              </Button>
+              </Button>   
               {userType === 'vendor' && (
                 <Button
                 sx={{marginLeft:'4px'}}

@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const AdminLogin=()=> {
-
+   
 const [login,setLogin]=useState({email:"",password:""})
 const [auth,setAuth]=useState(false);
 const [error,setError]=useState(false);

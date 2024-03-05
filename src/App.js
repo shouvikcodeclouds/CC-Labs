@@ -1,8 +1,8 @@
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
 
-import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Header from './Components/Header';
 import AdminDashboard from './Pages/AdminDashboard';
@@ -27,20 +27,14 @@ function App() {
     <Route
       path="/admin"
       element={
-        localStorage.getItem("admin")==='true' ? (
-          <Navigate to="/admindashboard" />
-        ) : (
-          <AdminLogin/>
-        )
+        <AdminLogin/>
       }
     />
     <Route
       path="/vendor"
       element={
-        localStorage.getItem("vendor")==='true' ? (
-          <Navigate to="/vendordashboard/:id" />
-        ) : (
-      <VendorLogin/>)}
+        <VendorLogin/>
+      }
     />
     <Route path="/signup" element={<VendorSignup />} />
 

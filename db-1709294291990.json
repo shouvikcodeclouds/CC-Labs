@@ -1,0 +1,116 @@
+{
+  "vendors": [
+    {
+      "id": "ffaa25fe-e62f-407c-97bb-29f50ac54ab9",
+      "name": "Dibyendu",
+      "email": "dibyendu@cc.com",
+      "password": "okay1234",
+      "isActive": true,
+      "category": "interior decoration",
+      "description": "lorem ipsum",
+      "price": "45.70"
+    },
+    {
+      "id": "f8b9bb08-7f64-4908-9b6c-2dca6688178e",
+      "name": "Sayan",
+      "email": "sayan@gmail.com",
+      "password": "pass1234",
+      "isActive": true,
+      "category": "kitchen appliance repairing",
+      "description": "Best modular kitchen in town",
+      "price": "50.55"
+    },
+    {
+      "id": "02b4ff0e-5f4e-4a75-bb19-6168e3bf945f",
+      "name": "Manish",
+      "email": "manish@gmail.com",
+      "password": "pass12345",
+      "isActive": true,
+      "category": "carpentry",
+      "description": "Sliding doors and windows available.",
+      "price": "45.59"
+    },
+    {
+      "id": "77a37127-9e1c-45d1-95fe-a209032b9be4",
+      "name": "Test11",
+      "email": "test@clc.co",
+      "password": "pass1234",
+      "isActive": true,
+      "category": "graffiti ",
+      "description": "We provide best graffiti at reasonable price",
+      "price": "55.44"
+    },
+    {
+      "id": "3d55ab17-81c8-415b-b9aa-8203b712566b",
+      "name": "test12",
+      "email": "test12@cc.com",
+      "password": "pass1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
+    },
+    {
+      "id": "ffe49c70-b0fa-4459-be66-92bbdaf01c1e",
+      "name": "test13",
+      "email": "test13@gmail.com",
+      "password": "1234pass",
+      "isActive": true,
+      "category": "app development",
+      "description": "",
+      "price": "77.00"
+    },
+    {
+      "id": "d9db25bc-6ec8-4da7-8097-35e4f54bec05",
+      "name": "bidyut",
+      "email": "bidyut@g.co",
+      "password": "pass1234",
+      "isActive": false,
+      "category": "",
+      "description": "",
+      "price": ""
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Web Design",
+      "value": "web design"
+    },
+    {
+      "id": "2",
+      "name": "Interior Decoration",
+      "value": "interior decoration"
+    },
+    {
+      "id": "7",
+      "name": "Electric appliance repairing",
+      "value": "electric appliance repairing"
+    },
+    {
+      "id": "8",
+      "name": "Kitchen appliance repairing",
+      "value": "kitchen appliance repairing"
+    },
+    {
+      "id": "10",
+      "name": "Carpentry",
+      "value": "carpentry"
+    },
+    {
+      "id": "11",
+      "name": "App development",
+      "value": "app development"
+    },
+    {
+      "id": "12",
+      "name": "Web development",
+      "value": "web development"
+    },
+    {
+      "id": "13",
+      "name": "Graffiti ",
+      "value": "graffiti "
+    }
+  ]
+}

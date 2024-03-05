@@ -1,6 +1,6 @@
 import React from 'react'
 import{
-    Typography,
+  
     Dialog,
     DialogActions,
     DialogContent,
@@ -34,4 +34,4 @@ const Modal = ({onClose,onClick,open,desc}) => {
   )
 }
 
-export default Modal
+export default Modal;

@@ -64,7 +64,7 @@ const handleSubmit =  e => {
       setTimeout(() => {
         navigate("/vendor")
       }, 1900);
-     
+      
     }
     else{
       setErr(true);
