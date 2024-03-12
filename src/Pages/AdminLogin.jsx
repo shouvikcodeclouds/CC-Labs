@@ -4,7 +4,6 @@ import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import {  ThemeProvider } from '@mui/material/styles';
 import { admin } from '../_mock/admin';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,8 +11,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AdminLogin=()=> {
    
-const [login,setLogin]=useState({email:"",password:""})
-const [auth,setAuth]=useState(false);
+const [login,setLogin]=useState({email:"",password:""});
 const [error,setError]=useState(false);
 const navigate=useNavigate();
 
@@ -25,9 +23,6 @@ setLogin({...login,
 })
 
 }
-
-
-
   const handleLogin =  e => {
     e.preventDefault();
     
@@ -45,9 +40,6 @@ else{
     setError(true)
 }
   }
-   
-
-
   return (
     <>
 
@@ -117,4 +109,4 @@ else{
   );
 }
 
-export default AdminLogin
+export default AdminLogin;

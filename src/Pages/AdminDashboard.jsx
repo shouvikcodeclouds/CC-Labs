@@ -1,11 +1,17 @@
 import { Typography } from '@mui/material';
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Admin from '../Components/Admin';
 import Category from '../Components/Category';
 import { admin } from '../_mock/admin';
 
 
 const AdminDashboard = () => {
+  useEffect(() => {
+    console.log(localStorage.getItem("admin")=="true");
+  
+    
+  }, [localStorage.getItem("admin")])
+  
   const [activeTab, setActiveTab] = useState('tab1');
 
   const handleTabChange = (tab) => {

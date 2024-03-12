@@ -1,8 +1,8 @@
 
-import React from 'react';
+import React ,{useEffect} from 'react';
 import './App.css';
 
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
 
 import Header from './Components/Header';
 import AdminDashboard from './Pages/AdminDashboard';
@@ -18,6 +18,13 @@ import VendorTracker from './Pages/VendorTracker';
 
 function App() {
 
+  useEffect(() => {
+    console.log(localStorage.getItem("admin")===true);
+  
+    
+  }, [localStorage.getItem("admin")])
+  
+
   return (
     <>
    <BrowserRouter>  
@@ -27,7 +34,7 @@ function App() {
     <Route
       path="/admin"
       element={
-        <AdminLogin/>
+        localStorage.getItem("admin")=="true"? <Navigate to="/admindashboard"/>:<AdminLogin/>
       }
     />
     <Route

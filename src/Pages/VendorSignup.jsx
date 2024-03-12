@@ -57,15 +57,15 @@ const handleSubmit =  e => {
       description:formData.description,
       price:formData.price
     };
-    if(!emailerr&&(formData.password==formData.confpassword)){
+    if(!emailerr&&(formData.password===formData.confpassword)){
       setopen(true);
       axios.post('http://localhost:8800/vendors', newVendorData, header)
       .then(res => console.log(res))
       setTimeout(() => {
         navigate("/vendor")
       }, 1900);
-      
-    }
+                                                                           
+    }                                  
     else{
       setErr(true);
     }
