@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Modal from './Modal';
@@ -7,8 +7,9 @@ const Category = () => {
   const [categories, setCategories] = useState([{}]);
   const [newCategory, setNewCategory] = useState('');
   const [open,setOpen]=useState(false);
-  const [uid,setUid]=useState('')
-
+  const [uid,setUid]=useState('');
+  const [disabled,setDisabled]=useState(false)
+  const btnRef=useRef(null);
   useEffect(() => {
     axios.get('http://localhost:8800/categories')
       .then(res => {
@@ -18,11 +19,22 @@ const Category = () => {
         console.error('Error fetching categories:', error);
       });
   }, [categories]);
+ useEffect(()=>{
+    if(newCategory.length>0) setDisabled(false)
+    else setDisabled(true)
+ },[newCategory]);
+
+useEffect(()=>{
+    if(!disabled) btnRef.current.style.background="#4CAF50";
+    else  btnRef.current.style.background="#d5dad5"
+},[disabled]);
 
   const handleAddCategory = async (e) => {
     
     e.preventDefault();
     const newCategoryId=parseInt(categories[categories.length-1].id)+1;
+    let temp=newCategoryId;
+    
     const header={
         'Content-Type': 'application/json'
     }
@@ -59,7 +71,10 @@ const Category = () => {
       setOpen(false)
   };
 
-
+const handleEnterkey=(e)=>{
+  if (e.key === "Enter")
+  btnRef.current.click();
+}
   return (
     <div className="category-container">
       <h2 className="category-heading">Categories</h2>
@@ -83,6 +98,7 @@ const Category = () => {
       <div className="add-category">
         <input
           type="text"
+          onKeyDown={handleEnterkey}
           placeholder="New Category"
           value={newCategory}
           onChange={(e) => setNewCategory(e.target.value)}
@@ -90,13 +106,15 @@ const Category = () => {
         />
         <button
           onClick={handleAddCategory}
+          disabled={disabled}
+          ref={btnRef}
           className="add-category-button"
         >
           Add Category
         </button>
       </div>
       <Modal 
-      onClose={()=>setOpen(false) }
+      onClose={()=>setOpen(false)}
       onClick={()=>handleDelete(uid)}
       open={open}
       desc="category"

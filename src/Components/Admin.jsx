@@ -37,7 +37,7 @@ const Admin = () => {
   const [uid, setUid] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [categoryFilter, setCategoryFilter] = useState('all');
+  //const [categoryFilter, setCategoryFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
   const navigate = useNavigate();
   const btnref=useRef(null);
@@ -93,9 +93,9 @@ const Admin = () => {
     setFilteredData(filteredVendors);
   };
 
-  const handleCategoryFilterChange = (e) => {
-    setCategoryFilter(e.target.value);
-  };
+  // const handleCategoryFilterChange = (e) => {
+  //   setCategoryFilter(e.target.value);
+  // };
 
   const handleStatusFilterChange = (e) => {
     const selectedStatus = e.target.value.toLowerCase();
@@ -110,7 +110,6 @@ const Admin = () => {
 
   return (
     <>
-    
      <div className="admin-dashboard-container">
     <Grid container spacing={2}>
       <Grid item sm={6}>
@@ -182,11 +181,6 @@ const Admin = () => {
   </div>
       </Grid>
     </Grid>
-     
-       
-
-        
-
         <TableContainer component={Paper} className="table-container">
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead className='table-header'>

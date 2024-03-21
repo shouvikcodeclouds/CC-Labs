@@ -20,7 +20,6 @@ const Header = () => {
       }, 1200);
       
   }
-
     const handleDropdown = (e) => {
       setDropdown(e.currentTarget);
         
@@ -66,13 +65,10 @@ const Header = () => {
           <div className="custom-dropdown">
             <ul>
               <li onClick={handleLogout}> Logout</li>
-               
-              
             </ul>
           </div>
         </Popover>
     </div>
   )
 }
-
 export default Header;

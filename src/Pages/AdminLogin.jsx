@@ -7,33 +7,26 @@ import Typography from '@mui/material/Typography';
 import { admin } from '../_mock/admin';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const AdminLogin=()=> {
-   
 const [login,setLogin]=useState({email:"",password:""});
 const [error,setError]=useState(false);
 const navigate=useNavigate();
-
 
 function handleChange(e){
 setLogin({...login,
     [e.target.name]:e.target.value
 
 })
-
 }
   const handleLogin =  e => {
-    e.preventDefault();
-    
+    e.preventDefault();   
     console.log("submit")
     if(admin.email===login.email&&admin.password===login.password){
         console.log("success")
         localStorage.setItem("admin",true)
         setTimeout(() => {
           navigate('/admindashboard')
-        }, 1000); 
-        
+        }, 1000);         
 }
 else{
   console.log("error");
@@ -42,8 +35,6 @@ else{
   }
   return (
     <>
-
-   
       <div className='admin-login-container'>
      
         <Box
@@ -53,8 +44,7 @@ else{
             flexDirection: 'column',
             alignItems: 'center',
           }}
-        >
-         
+        >      
           <Typography component="h1" variant="h5">
              Login as admin
           </Typography>
@@ -89,15 +79,13 @@ else{
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            
+              sx={{ mt: 3, mb: 2 }}          
             >
               Sign In
             </Button>
            {error&& < p className='inactive'>Please Enter correct credentials and try again</p>}
             <Grid container>
               <Grid item xs>
-               
               </Grid>
             </Grid>
           </Box>
@@ -108,5 +96,4 @@ else{
     </>
   );
 }
-
 export default AdminLogin;

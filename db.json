@@ -45,10 +45,10 @@
       "name": "test12",
       "email": "test12@cc.com",
       "password": "pass1234",
-      "isActive": false,
-      "category": "",
-      "description": "",
-      "price": ""
+      "isActive": true,
+      "category": "AC and Fridge Servicing",
+      "description": "We Provide all in one solution for AC and fridge cleaning, servicing and repairing",
+      "price": "34.45"
     },
     {
       "id": "ffe49c70-b0fa-4459-be66-92bbdaf01c1e",
@@ -65,7 +65,7 @@
       "name": "bidyut",
       "email": "bidyut@g.co",
       "password": "pass1234",
-      "isActive": false,
+      "isActive": true,
       "category": "",
       "description": "",
       "price": ""
@@ -111,7 +111,16 @@
       "id": "13",
       "name": "Graffiti ",
       "value": "graffiti "
+    },
+    {
+      "id": "14",
+      "name": "Painting and cleaning buildings",
+      "value": "Painting and cleaning buildings"
+    },
+    {
+      "id": "15",
+      "name": "AC and Fridge Servicing",
+      "value": "AC and Fridge Servicing"
     }
   ]
-  
 }

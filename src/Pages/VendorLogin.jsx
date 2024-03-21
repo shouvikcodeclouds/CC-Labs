@@ -81,7 +81,6 @@ const VendorLogin = () => {
               autoComplete="current-password"
               onChange={handleChange}
             />
-           
             <Button
               type="submit"
               fullWidth
