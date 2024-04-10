@@ -25,6 +25,7 @@ app.use('/get',categoryRouter)
 app.use('/getone',categoryRouter)
 app.use('/new',vendorRouter)
 app.use('/get',vendorRouter)
+app.use('/update',vendorRouter)
 app.use('/auth',authRouter)
 
 mongoose.connect(process.env.MONGO_URI, {
