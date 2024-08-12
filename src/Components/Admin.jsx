@@ -250,7 +250,6 @@ const Admin = () => {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-
         <Popover
           id="simple-popover"
           open={Boolean(dropdown)}
@@ -270,8 +269,7 @@ const Admin = () => {
             </ul>
           </div>
         </Popover>
-      </div>
-     
+      </div>      
     <Modal 
     onClose={()=>setOpen(false)} 
     onClick={handleDelete} 

@@ -181,8 +181,6 @@ const CustomerData = () => {
                       {customer.firstName} {customer.lastName}
                     </TableCell>
                     <TableCell align="left">{customer.id}</TableCell>
-                   
-                    
                     <TableCell>{customer.email ? customer.email : 'Not added'}</TableCell>
                     <TableCell>{customer.phoneNumber ? `${customer.phoneNumber}` : 'Not added'}</TableCell>
                     <TableCell>{customer?.address&&`${customer?.address} ${customer?.address2 && `,${customer?.address2}`},${customer?.city},${customer?.state}-${customer?.pincode} ${customer?.country}`}</TableCell>

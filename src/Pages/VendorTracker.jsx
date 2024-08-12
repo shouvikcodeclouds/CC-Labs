@@ -129,9 +129,9 @@ const VendorTracker = () => {
         color="primary"
         onClick={changeActiveStatus}
         sx={{
-          backgroundColor: '#1dc9d5', // Green color
+          backgroundColor: '#1dc9d5', 
           '&:hover': {
-            backgroundColor: '#45a049', // Darker green color on hover
+            backgroundColor: '#45a049',
           },
         }}
       >

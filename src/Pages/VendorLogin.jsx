@@ -21,14 +21,14 @@ const VendorLogin = () => {
         setLogin({...login,[e.target.name]:e.target.value})
       }
       const handleLogin = async e => {
-        e.preventDefault();
+        e.preventDefault(); 
         const vendorData= await axios.get('http://localhost:8800/vendors');
 
          const isAuthenticated = vendorData.data.find(
             vendor =>
               vendor.email === login.email &&
               vendor.password === login.password
-          );
+          );                                 
           console.log(vendorData.data);
          
           console.log(isAuthenticated);

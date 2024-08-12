@@ -51,7 +51,7 @@ const CustomerHome = () => {
         console.log(res.data);
         setCustomerInfo(res.data)
       });}
-
+ 
   useEffect(() => {
     id &&
       axios
